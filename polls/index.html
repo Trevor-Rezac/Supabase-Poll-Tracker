@@ -14,15 +14,48 @@
 </head>
 
 <body>
-    <header>
+    <header class="polls-header">
         <button id="logout-btn">Logout</button>
+        <h2>Create and Track a Poll</h2>
         <div class="gutter-right logo">
             <img src="../assets/big-logo.png" />
         </div>
     </header>
     <main>
-        <section class="main-section">
-
+        <section class="top-section">
+            
+            <div class="create-poll-container">
+                <form>
+                    <input type="text" placeholder="Poll Question" name="poll-question">
+                    <input type="text" placeholder="Option A" name="option-a">
+                    <input type="text" placeholder="Option B" name="option-b">
+                    <button id="poll-btn">Create Poll</button>
+                </form>
+            </div>
+            <div class="poll-vote-container">
+                    <button class="vote-btn" id="vote-a-btn">Vote A</button>
+                    <button class="vote-btn" id="vote-b-btn">Vote B</button>
+                    <button class="vote-btn" id="close-poll-btn">Close Poll</button>
+            </div>
+            <div class="current-poll-container">
+                <h3>Current Poll</h3>
+                <p id="poll-question"></p>
+                <div id="poll-options">
+                    <div class="option a">
+                        <p id="option-a-title"></p>
+                        <p id="option-a-votes"></p>
+                    </div>
+                    <div class="option b">
+                        <p id="option-b-title"></p>
+                        <p id="option-b-votes"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bottom-section">
+            <h3>Past Polls</h3>
+            <div class="past-polls">
+            </div>
         </section>
     </main>
     <footer>
