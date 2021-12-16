@@ -1,8 +1,9 @@
 // import functions and grab DOM elements
+import { logout } from '../fetch-utils.js';
 
-// let state
+const logoutBtn = document.getElementById('logout-btn');
+console.log(logoutBtn);
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+logoutBtn.addEventListener('click', () => {
+    logout();
+});

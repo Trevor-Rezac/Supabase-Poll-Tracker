@@ -38,7 +38,7 @@ header {
 }
 
 h2 {
-    padding-left: 35%;
+    padding-left: 40%;
 }
 
 h3 {
@@ -95,4 +95,9 @@ form {
 
 input {
     margin: 5px;
+}
+
+#logout-btn {
+    height: 25px;
+    width: 75px;
 }
