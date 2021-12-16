@@ -8,7 +8,7 @@ const signUpPassword = document.getElementById('sign-up-password');
 const signInForm = document.getElementById('sign-in-form');
 const signInEmail = document.getElementById('sign-in-email');
 const signInPassword = document.getElementById('sign-in-password');
-
+console.log(signInForm, signInEmail, signInPassword);
 signUpForm.addEventListener('submit', async(e) => {
     e.preventDefault();
 
@@ -21,14 +21,14 @@ signUpForm.addEventListener('submit', async(e) => {
     }
 });
 
-// signInForm.addEventListener('submit', async(e) => {
-//     e.preventDefault();
+signInForm.addEventListener('submit', async(e) => {
+    e.preventDefault();
 
-//     const user = await signInUser(signInEmail.value, signInPassword.value);
+    const user = await signInUser(signInEmail.value, signInPassword.value);
 
-//     if (user) {
-//         redirectIfLoggedIn();
-//     } else {
-//         console.log(user);
-//     }
-// });
+    if (user) {
+        redirectIfLoggedIn();
+    } else {
+        console.log(user);
+    }
+});
