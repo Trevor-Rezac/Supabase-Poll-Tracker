@@ -1,5 +1,5 @@
 export function renderPastPoll(poll) {
-    const pastPollEl = document.createElement('div')
+    const pastPollEl = document.createElement('div');
     const pastTitleEl = document.createElement('p');
     const optionAEl = document.createElement('p');
     const optionBEl = document.createElement('p');

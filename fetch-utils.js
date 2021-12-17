@@ -39,9 +39,9 @@ export async function logout() {
     return window.location.href = '../';
 }
 
-function checkError({ data, error }) {
-    return error ? console.error(error) : data;
-}
+// function checkError({ data, error }) {
+//     return error ? console.error(error) : data;
+// }
 
 export async function savePoll(question, optionA, optionB, votesA, votesB) {
     const response = await client

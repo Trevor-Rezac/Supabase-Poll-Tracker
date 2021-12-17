@@ -41,21 +41,21 @@ pollForm.addEventListener('submit', async(e) => {
 
 voteABtn.addEventListener('click', () => {
     votesA++;
-    optionAVotesEl.textContent = votesA;
+    displayCurrentPoll();
 });
 
 voteBBtn.addEventListener('click', () => {
     votesB++;
-    optionBVotesEl.textContent = votesB;
+    displayCurrentPoll();
 });
 
 closePollBtn.addEventListener('click', async() => {
-
+    
     await savePoll(question, optionA, optionB, votesA, votesB);
 
     resetState();
 
-    displayPolls();
+    displayAllPolls();
     displayCurrentPoll();
 });
 
@@ -79,7 +79,7 @@ function resetState() {
     votesB = '';
 }
 
-async function displayPolls() {
+async function displayAllPolls() {
     const polls = await getPolls();
 
     pastPollsEl.textContent = '';
@@ -89,4 +89,4 @@ async function displayPolls() {
     }
 }
 
-displayPolls();
+displayAllPolls();
