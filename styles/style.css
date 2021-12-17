@@ -22,6 +22,10 @@ body {
     background-color: var(--mint-cream);
 }
 
+button{
+    cursor: pointer;
+}
+
 main {
     height: 100%;
     width: 100%;
@@ -70,7 +74,8 @@ header img {
 }
 
 p {
-    margin: var(--gutter);
+    margin: 0;
+    padding: 0;
 }
 
 footer {
@@ -141,10 +146,18 @@ input {
 }
 
 .current-poll-container {
+    width: 200px;
     display: flex;
     flex-direction: column;
     margin: 15px;
     background-color: var(--beau-blue);
     border: solid 2px var(--dark-byzantium);
     border-radius: 5px;
+    text-align: center;
+}
+
+.option {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
