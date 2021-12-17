@@ -1,8 +1,34 @@
-// import functions and grab DOM elements
 
-// let state
+import { redirectIfLoggedIn, signUpUser, signInUser } from './fetch-utils.js';
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+const signUpForm = document.getElementById('sign-up-form');
+const signUpEmail = document.getElementById('sign-up-email');
+const signUpPassword = document.getElementById('sign-up-password');
+
+const signInForm = document.getElementById('sign-in-form');
+const signInEmail = document.getElementById('sign-in-email');
+const signInPassword = document.getElementById('sign-in-password');
+
+signUpForm.addEventListener('submit', async(e) => {
+    e.preventDefault();
+
+    const user = await signUpUser(signUpEmail.value, signUpPassword.value);
+
+    if (user) {
+        redirectIfLoggedIn();
+    } else {
+        console.log(user);
+    }
+});
+
+signInForm.addEventListener('submit', async(e) => {
+    e.preventDefault();
+
+    const user = await signInUser(signInEmail.value, signInPassword.value);
+
+    if (user) {
+        redirectIfLoggedIn();
+    } else {
+        console.log(user);
+    }
+});
