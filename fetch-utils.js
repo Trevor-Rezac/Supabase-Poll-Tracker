@@ -42,3 +42,24 @@ export async function logout() {
 function checkError({ data, error }) {
     return error ? console.error(error) : data;
 }
+
+export async function savePoll(question, optionA, optionB, votesA, votesB) {
+    const response = await client
+        .from('polls')
+        .insert({
+            question,
+            option_a: optionA,
+            option_b: optionB,
+            votes_a: votesA,
+            votes_b: votesB
+        });
+    return response.data;
+}
+
+export async function getPolls() {
+    const response = await client
+        .from('polls')
+        .select();
+    
+    return response.data;
+}
